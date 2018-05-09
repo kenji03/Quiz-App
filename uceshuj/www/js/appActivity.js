@@ -217,7 +217,7 @@ var questionpointlayer;
 
 // get GeoJSON file from database
 function processGeoJSONfile(geoJSONString){
-	alert("start processing")
+	alert("Start Processing")
 	// convert the string of downloaded data to JSON
 	var geoJSON = JSON.parse(geoJSONString);
 	var questionpointlayer = L.geoJson(geoJSON,{
@@ -366,7 +366,7 @@ function isEquivalent(a, b) {
 // add function to test that everything is working and upload it to the js sub directory
 // create a function to get the first bit of text data from the from
 function startDataUpdate(){
-	confirm("start data update");
+	confirm("Start Data Update");
 	
 	var pointname = document.getElementById("pointname").value;
 	var firstname = document.getElementById("firstname1").value;
@@ -380,7 +380,6 @@ function startDataUpdate(){
 	var longitude = document.getElementById("longitude1").value;
 	
 	postString = postString +"&latitude=" + latitude + "&longitude=" + longitude;
-	alert(postString)
 	updateData(postString)
 }
 
