@@ -178,7 +178,7 @@ function onSuccess(position) {
 		}).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+"("+
 		geojsonFeature.properties.popupContent+" )</b>");
 		
-	mymap.flyToBounds(currentlocationlayer.getBounds(),{maxZoom:18});
+	mymap.flyToBounds(currentlocationlayer.getBounds(),{maxZoom:17});
 }
 
 // onError Callback receives a PositionError object
