@@ -400,6 +400,6 @@ function dataUpdate(){
 	// this function listens out for the server to say tha the data is ready 
 	if (client.readyState == 4){
 		// change the DIV to show the response
-		alert ("update is ready")
+		alert ("Update Has Completed")
 	}
 }

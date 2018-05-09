@@ -57,7 +57,33 @@ app.use(bodyParser.urlencoded({
 	}));
 app.use(bodyParser.json());
 
-
+app.post('/uploadData',function(req,res){
+  // note that we are using POST here as we are uploading data 
+  // so the parameters form part of the BODY of the request rather than the RESTful API
+  console.dir(req.body);
+  
+  pool.connect(function(err,client,done){
+	  if(err){
+		  cosole.log("not able to get connection "+ err);
+		  res.status(400).send(err);
+	  }
+	  var geometrystring = "st_geometryfromtext('POINT(" + req.body.longitude + " " + req.body.latitude + ")',4326";
+	  
+	  var querystring = "INSERT into app_questions(first_name,last_name,module_code,question,choice_1,choice_2,choice_3,choice_4,correct_answer,location_name,location) values ('";
+	querystring = querystring + req.body.firstname + "','" + req.body.lastname + "','" + req.body.module + "','"+ req.body.question+"','";
+	querystring = querystring + req.body.choice1 + "','" + req.body.choice2 + "','" +req.body.choice3+"','"+req.body.choice4+"','"+req.body.answer+"','"+req.body.locationname+"',"+geometrystring + "));";
+	console.log(querystring);
+	
+	client.query( querystring,function(err,result){
+		done();
+		if(err){ 
+			console.log(err);
+			res.satus(400).send(err);
+		}
+		res.status(200).send("Upload Has Completed");
+	});
+  }); 
+});
   
 app.get('/getGeoJSONfile',function(req,res){
 	console.log("connecting server and query required data");
