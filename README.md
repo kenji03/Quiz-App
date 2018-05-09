@@ -10,6 +10,8 @@
    3. There are only one answer out of four choices and the result can be seen by clicking the "Get Result" button.
     
    4. In the middle box, it tells users how far he/she is from the Warren Street and the point of marker of Warren Street is colored in red to be found easily. 
+   
+   5. If a user clicks on a point on leaflet map, pop up with a form will be appeared. This is for collecting potential quiz points from users.
     
   <h3> Attention </h3>
    
