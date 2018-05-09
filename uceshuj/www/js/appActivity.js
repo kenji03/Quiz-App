@@ -204,7 +204,7 @@ function geoJSONResponse() {
 	  // once the data is ready, process the data
 	  var geoJSONString = client.responseText;
 	  processGeoJSONfile(geoJSONString);
-	  alert(geoJSONString);
+	
   }
 }
 
